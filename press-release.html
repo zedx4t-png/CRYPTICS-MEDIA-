@@ -1,0 +1,1814 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Press Release - Cryptics Media</title>
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/3A6qMNJ.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/3A6qMNJ.png">
+    <style>
+        /* ALL STYLING FROM INDEX PAGE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header - EXACT from index page */
+        header {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            gap: 5px;
+        }
+
+        .logo-cryptics {
+            color: #0066cc;
+        }
+
+        .logo-media {
+            color: #ff6600;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section - EXACT from index page */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero h1 span {
+            color: #0066cc;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #ccc;
+        }
+
+        /* Sales Flexibility Notice */
+        .sales-flexibility {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            max-width: 800px;
+            margin: 40px auto;
+            border: 2px solid #e0e0e0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+
+        .sales-flexibility h3 {
+            font-size: 24px;
+            color: #1a1a1a;
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+
+        .sales-flexibility ul {
+            list-style: none;
+            text-align: left;
+            display: inline-block;
+            margin: 0 0 20px 0;
+            padding: 0;
+        }
+
+        .sales-flexibility li {
+            color: #666;
+            margin-bottom: 12px;
+            font-size: 16px;
+            padding-left: 25px;
+            position: relative;
+            line-height: 1.5;
+        }
+
+        .sales-flexibility li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #0066cc;
+            font-weight: bold;
+        }
+
+        .sales-flexibility li strong {
+            color: #1a1a1a;
+        }
+
+        /* Category Sections */
+        .category-section {
+            margin: 60px 0 40px;
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        /* PACKAGES SECTION - EXACT from reference code */
+        .packages-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Package Cards - EXACT from reference code */
+        .package-card {
+            background: rgba(252, 252, 253, 0.95);
+            border: 1px solid rgba(209, 213, 219, 0.8);
+            border-radius: 10px;
+            padding: 15px 12px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            backdrop-filter: blur(10px);
+            height: 100%;
+            min-height: 280px;
+        }
+
+        .package-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(37, 99, 235, 0.8);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+            background: rgba(252, 252, 253, 0.95);
+        }
+
+        .package-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .package-card:hover::before {
+            opacity: 1;
+        }
+
+        .package-header {
+            text-align: center;
+            margin-bottom: 12px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid rgba(37, 99, 235, 0.1);
+        }
+
+        /* Package title - EXACT from reference (1rem) */
+        .package-title {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 4px;
+            line-height: 1.1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        /* Package outlets - EXACT from reference */
+        .package-outlets {
+            color: #6b7280;
+            font-size: 0.75rem;
+            margin-top: 4px;
+            line-height: 1.1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        /* Column header */
+        .column-header {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8px;
+            padding: 5px 6px;
+            background: rgba(37, 99, 235, 0.05);
+            border-radius: 3px;
+            font-size: 0.65rem;
+            color: #4b5563;
+            border: 1px dashed rgba(37, 99, 235, 0.2);
+        }
+
+        .media-column {
+            color: #4b5563;
+        }
+
+        .website-column {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* Media Website Container */
+        .media-website-container {
+            margin: 10px 0;
+            flex-grow: 1;
+        }
+
+        .media-website-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 5px 6px;
+            margin-bottom: 3px;
+            background: rgba(37, 99, 235, 0.05);
+            border-left: 2px solid #2563eb;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: #4b5563;
+            transition: all 0.2s ease;
+            min-height: 26px;
+        }
+
+        .media-website-row:hover {
+            background: rgba(37, 99, 235, 0.1);
+            transform: translateX(1px);
+        }
+
+        .media-name {
+            flex: 1;
+            font-weight: 500;
+            padding-right: 5px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
+            min-width: 0;
+            color: #4b5563;
+            cursor: default;
+        }
+
+        /* Website links - CLICKABLE - EXACT font size from reference */
+        .website-link {
+            font-weight: 600;
+            color: #2563eb;
+            margin-left: 6px;
+            text-align: right;
+            min-width: 80px;
+            position: relative;
+            cursor: pointer;
+            font-size: 0.75rem;
+            line-height: 1.1;
+            white-space: nowrap;
+            text-decoration: none;
+            transition: all 0.2s ease;
+        }
+
+        .website-link:hover {
+            color: #7c3aed;
+            text-decoration: underline;
+        }
+
+        /* Website link tooltip */
+        .website-link::after {
+            content: 'Click to visit website';
+            position: absolute;
+            bottom: 100%;
+            left: 50%;
+            transform: translateX(-50%);
+            background: rgba(15, 23, 42, 0.95);
+            color: white;
+            padding: 2px 6px;
+            border-radius: 3px;
+            font-size: 0.55rem;
+            white-space: nowrap;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.2s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            z-index: 1000;
+            font-family: Arial, sans-serif;
+        }
+
+        .website-link:hover::after {
+            opacity: 1;
+            visibility: visible;
+            bottom: 102%;
+        }
+
+        .additional-outlet {
+            padding: 5px 6px;
+            margin: 6px 0 3px 0;
+            background: rgba(37, 99, 235, 0.05);
+            border-left: 2px solid #7c3aed;
+            border-radius: 3px;
+            font-size: 0.75rem;
+            color: #6b7280;
+            transition: all 0.2s ease;
+            text-align: center;
+            font-style: italic;
+            line-height: 1.1;
+        }
+
+        /* Footer - EXACT from index page */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Mobile Styles - Combined from both */
+        @media (max-width: 1200px) {
+            .packages-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .packages-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .category-title {
+                font-size: 28px;
+            }
+
+            .sales-flexibility {
+                padding: 20px;
+                margin: 30px auto;
+            }
+
+            .sales-flexibility h3 {
+                font-size: 20px;
+            }
+
+            .sales-flexibility li {
+                font-size: 14px;
+            }
+
+            /* Mobile package layout */
+            .package-card[style*="visibility: hidden"] {
+                display: none !important;
+            }
+            
+            .packages-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+            }
+
+            /* Mobile package styling - EXACT from reference */
+            .package-card {
+                padding: 18px 15px 20px 15px !important;
+                margin-bottom: 8px;
+                position: relative;
+                min-height: auto;
+            }
+            
+            .package-title {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            
+            /* Mobile font sizes - EXACT from reference */
+            .package-outlets {
+                font-size: 0.85rem;
+                margin-bottom: 12px;
+            }
+            
+            .media-website-row {
+                padding: 8px 10px;
+                margin-bottom: 5px;
+                min-height: 32px;
+                font-size: 0.85rem;
+                border-left-width: 3px;
+            }
+            
+            .media-name {
+                font-size: 0.85rem;
+                padding-right: 10px;
+            }
+            
+            .website-link {
+                margin-left: 8px;
+                min-width: 90px;
+                font-size: 0.85rem;
+            }
+            
+            .column-header {
+                padding: 8px 10px;
+                font-size: 0.75rem;
+                margin-bottom: 8px;
+            }
+            
+            .additional-outlet {
+                padding: 8px 10px;
+                font-size: 0.85rem;
+                margin: 10px 0 15px 0;
+            }
+
+            /* Footer for Mobile */
+            footer {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 20px;
+            }
+            
+            .footer-section {
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .category-title {
+                font-size: 24px;
+            }
+
+            .sales-flexibility {
+                padding: 15px;
+                margin: 20px auto;
+            }
+
+            .sales-flexibility h3 {
+                font-size: 18px;
+            }
+
+            .sales-flexibility li {
+                font-size: 13px;
+            }
+
+            /* Small mobile package adjustments */
+            .package-card {
+                padding: 15px 12px 20px 12px !important;
+            }
+            
+            .package-title {
+                font-size: 1.05rem;
+            }
+            
+            /* Small mobile font sizes - EXACT from reference */
+            .media-website-row {
+                padding: 7px 8px;
+                min-height: 30px;
+                font-size: 0.85rem;
+            }
+            
+            .website-link {
+                min-width: 85px;
+                font-size: 0.85rem;
+            }
+            
+            /* Footer for Small Mobile */
+            .footer-content {
+                padding: 0 15px;
+                gap: 20px;
+            }
+            
+            .footer-section h4 {
+                font-size: 16px;
+            }
+            
+            .footer-section a {
+                font-size: 14px;
+            }
+            
+            .footer-bottom {
+                padding: 20px 15px 0;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - EXACT from index page -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <span class="logo-cryptics">CRYPTICS</span>
+                <span class="logo-media">MEDIA</span>
+            </a>
+            
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            
+            <nav id="mainNav">
+                <a href="/">Home</a>
+                <a href="/press-release.html" style="color: #0066cc;">Press Release</a>
+                <a href="/audit-kyc.html">Audit & KYC</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - EXACT from index page -->
+    <section class="hero">
+        <div class="container">
+            <h1>Press Release <span>Distribution</span> Services</h1>
+            <p>Amplify your crypto project's message across leading crypto and mainstream media outlets. Choose from our comprehensive press release packages.</p>
+        </div>
+    </section>
+
+    <!-- Sales Flexibility Notice -->
+    <div class="container">
+        <div class="sales-flexibility">
+            <h3>📢 Sales Flexibility</h3>
+            <ul>
+                <li><strong>Clients can buy entire packages</strong></li>
+                <li><strong>Or choose individual websites from any tier</strong></li>
+                <li><strong>Custom bundles can be built per budget, region, or goal</strong></li>
+            </ul>
+        </div>
+    </div>
+
+    <!-- Packages Section -->
+    <div class="container">
+        <!-- International Media Packages -->
+        <section class="category-section" id="international-media">
+            <h2 class="category-title">International Media Packages</h2>
+            
+            <div class="packages-grid">
+                <!-- Package 1 - Financial Giants -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Financial Giants</div>
+                        <div class="package-outlets">Top Financial Publications</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Investing.com</div>
+                            <div class="website-link">
+                                <a href="http://investing.com/" target="_blank">investing.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">FXStreet</div>
+                            <div class="website-link">
+                                <a href="https://www.fxstreet.com/" target="_blank">fxstreet.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Invezz</div>
+                            <div class="website-link">
+                                <a href="https://invezz.com/" target="_blank">invezz.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Finance Magnates</div>
+                            <div class="website-link">
+                                <a href="https://www.financemagnates.com/" target="_blank">financemagnates.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 2 - Premium International News -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Premium International News</div>
+                        <div class="package-outlets">Top-Tier Mainstream Publications</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Yahoo Finance</div>
+                            <div class="website-link">
+                                <a href="https://finance.yahoo.com/" target="_blank">finance.yahoo.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">USA Today</div>
+                            <div class="website-link">
+                                <a href="https://www.usatoday.com/" target="_blank">usatoday.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">MarketWatch</div>
+                            <div class="website-link">
+                                <a href="https://www.marketwatch.com/" target="_blank">marketwatch.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Business Insider</div>
+                            <div class="website-link">
+                                <a href="https://www.businessinsider.com/" target="_blank">businessinsider.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">AP News</div>
+                            <div class="website-link">
+                                <a href="https://apnews.com/" target="_blank">apnews.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Morningstar</div>
+                            <div class="website-link">
+                                <a href="https://www.morningstar.com/" target="_blank">morningstar.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Benzinga</div>
+                            <div class="website-link">
+                                <a href="https://www.benzinga.com/" target="_blank">benzinga.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Digital Journal</div>
+                            <div class="website-link">
+                                <a href="https://www.digitaljournal.com/" target="_blank">digitaljournal.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Street Insider</div>
+                            <div class="website-link">
+                                <a href="https://www.streetinsider.com/" target="_blank">streetinsider.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">US Times Now</div>
+                            <div class="website-link">
+                                <a href="https://www.ustimesnow.com/" target="_blank">ustimesnow.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-outlet">+ 400 Other Premium Media Outlets</div>
+                </div>
+
+                <!-- Package 3 - Starter Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Starter Package</div>
+                        <div class="package-outlets">Essential Media Coverage</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Street Insider</div>
+                            <div class="website-link">
+                                <a href="https://www.streetinsider.com/" target="_blank">streetinsider.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Digital Journal</div>
+                            <div class="website-link">
+                                <a href="https://www.digitaljournal.com/" target="_blank">digitaljournal.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">US Times Now</div>
+                            <div class="website-link">
+                                <a href="https://www.ustimesnow.com/" target="_blank">ustimesnow.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-outlet">+ 400 Other Media Outlets</div>
+                </div>
+                
+                <!-- Empty package for 4th column -->
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Crypto Media Packages -->
+        <section class="category-section" id="crypto-media">
+            <h2 class="category-title">Crypto Media Packages</h2>
+            
+            <div class="packages-grid">
+                <!-- Package 4 - Titan Chain Pack -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Titan Chain Pack</div>
+                        <div class="package-outlets">Top Crypto Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">CoinDesk</div>
+                            <div class="website-link">
+                                <a href="https://www.coindesk.com/" target="_blank">coindesk.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinTelegraph</div>
+                            <div class="website-link">
+                                <a href="https://cointelegraph.com/" target="_blank">cointelegraph.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">BeInCrypto</div>
+                            <div class="website-link">
+                                <a href="https://beincrypto.com/" target="_blank">beincrypto.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Bitcoin.com</div>
+                            <div class="website-link">
+                                <a href="https://bitcoin.com/" target="_blank">bitcoin.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 5 - Alpha Signal Pack -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Alpha Signal Pack</div>
+                        <div class="package-outlets">Premium Crypto Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">CoinGape</div>
+                            <div class="website-link">
+                                <a href="https://coingape.com/" target="_blank">coingape.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">AMB Crypto</div>
+                            <div class="website-link">
+                                <a href="https://ambcrypto.com/" target="_blank">ambcrypto.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Bitcoinist</div>
+                            <div class="website-link">
+                                <a href="https://bitcoinist.com/" target="_blank">bitcoinist.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoPolitan</div>
+                            <div class="website-link">
+                                <a href="https://cryptopolitan.com/" target="_blank">cryptopolitan.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Block</div>
+                            <div class="website-link">
+                                <a href="https://theblock.co/" target="_blank">theblock.co</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinCentral</div>
+                            <div class="website-link">
+                                <a href="https://coincentral.com/" target="_blank">coincentral.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Blockchain Reporter</div>
+                            <div class="website-link">
+                                <a href="https://blockchainreporter.net/" target="_blank">blockchainreporter.net</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Watcher Guru</div>
+                            <div class="website-link">
+                                <a href="https://watcher.guru/" target="_blank">watcher.guru</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Brave New Coin</div>
+                            <div class="website-link">
+                                <a href="https://bravenewcoin.com/" target="_blank">bravenewcoin.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 6 - Market Mover Pack -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Market Mover Pack</div>
+                        <div class="package-outlets">Growing Crypto Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Decrypt</div>
+                            <div class="website-link">
+                                <a href="https://decrypt.co/" target="_blank">decrypt.co</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">DappRadar</div>
+                            <div class="website-link">
+                                <a href="https://dappradar.com/" target="_blank">dappradar.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Coin Republic</div>
+                            <div class="website-link">
+                                <a href="https://thecoinrepublic.com/" target="_blank">thecoinrepublic.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinPedia</div>
+                            <div class="website-link">
+                                <a href="https://coinpedia.org/" target="_blank">coinpedia.org</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinJournal</div>
+                            <div class="website-link">
+                                <a href="https://coinjournal.net/" target="_blank">coinjournal.net</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinEdition</div>
+                            <div class="website-link">
+                                <a href="https://coinedition.com/" target="_blank">coinedition.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">DailyCoin</div>
+                            <div class="website-link">
+                                <a href="https://dailycoin.com/" target="_blank">dailycoin.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CaptainAltcoin</div>
+                            <div class="website-link">
+                                <a href="https://captainaltcoin.com/" target="_blank">captainaltcoin.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 7 - Block Builder Pack -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Block Builder Pack</div>
+                        <div class="package-outlets">Emerging Crypto Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">LiveBTCNews</div>
+                            <div class="website-link">
+                                <a href="https://livebitcoinnews.com/" target="_blank">livebitcoinnews.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoNews</div>
+                            <div class="website-link">
+                                <a href="https://cryptonews.net/" target="_blank">cryptonews.net</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Tech Bullion</div>
+                            <div class="website-link">
+                                <a href="https://techbullion.com/" target="_blank">techbullion.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Crypto Directories</div>
+                            <div class="website-link">
+                                <a href="https://cryptodirectories.com/" target="_blank">cryptodirectories.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoNinjas</div>
+                            <div class="website-link">
+                                <a href="https://cryptoninjas.net/" target="_blank">cryptoninjas.net</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Coingabbar</div>
+                            <div class="website-link">
+                                <a href="https://coingabbar.com/" target="_blank">coingabbar.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Cryptonomist</div>
+                            <div class="website-link">
+                                <a href="https://en.cryptonomist.ch/" target="_blank">cryptonomist.ch</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Defiant</div>
+                            <div class="website-link">
+                                <a href="https://thedefiant.io/" target="_blank">thedefiant.io</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinCheckup</div>
+                            <div class="website-link">
+                                <a href="https://coincheckup.com/" target="_blank">coincheckup.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">ZyCrypto</div>
+                            <div class="website-link">
+                                <a href="https://zycrypto.com/" target="_blank">zycrypto.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second row for remaining crypto packages -->
+            <div class="packages-grid" style="margin-top: 20px;">
+                <!-- Package 8 - Genesis Pack -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Genesis Pack</div>
+                        <div class="package-outlets">Niche Crypto Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoBriefing</div>
+                            <div class="website-link">
+                                <a href="https://cryptobriefing.com/" target="_blank">cryptobriefing.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">WalletInvestor</div>
+                            <div class="website-link">
+                                <a href="https://walletinvestor.com/" target="_blank">walletinvestor.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">U.Today</div>
+                            <div class="website-link">
+                                <a href="https://u.today/" target="_blank">u.today</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinCodeCap</div>
+                            <div class="website-link">
+                                <a href="https://coincodecap.com/" target="_blank">coincodecap.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Moneycheck</div>
+                            <div class="website-link">
+                                <a href="https://moneycheck.com/" target="_blank">moneycheck.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">TradingBeasts</div>
+                            <div class="website-link">
+                                <a href="https://tradingbeasts.com/" target="_blank">tradingbeasts.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Cryptowisser</div>
+                            <div class="website-link">
+                                <a href="https://cryptowisser.com/" target="_blank">cryptowisser.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Stelareum</div>
+                            <div class="website-link">
+                                <a href="https://stelareum.io/" target="_blank">stelareum.io</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Publish0x</div>
+                            <div class="website-link">
+                                <a href="https://www.publish0x.com/" target="_blank">publish0x.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Coindar</div>
+                            <div class="website-link">
+                                <a href="https://coindar.org/" target="_blank">coindar.org</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">MPost</div>
+                            <div class="website-link">
+                                <a href="https://mpost.io/" target="_blank">mpost.io</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Crypto Daily</div>
+                            <div class="website-link">
+                                <a href="https://cryptodaily.co.uk/" target="_blank">cryptodaily.co.uk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 9 - Crypto Wire -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Crypto Wire</div>
+                        <div class="package-outlets">Crypto Media Network</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Crypto Directories</div>
+                            <div class="website-link">
+                                <a href="https://cryptodirectories.com/" target="_blank">cryptodirectories.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinRaw</div>
+                            <div class="website-link">
+                                <a href="https://coinraw.com/" target="_blank">coinraw.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CoinBlooms</div>
+                            <div class="website-link">
+                                <a href="https://coinblooms.com/" target="_blank">coinblooms.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoFetchs</div>
+                            <div class="website-link">
+                                <a href="https://cryptofetchs.com/" target="_blank">cryptofetchs.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoFlexs</div>
+                            <div class="website-link">
+                                <a href="https://cryptoflexs.com/" target="_blank">cryptoflexs.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoGloom</div>
+                            <div class="website-link">
+                                <a href="https://cryptogloom.com/" target="_blank">cryptogloom.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoMazes</div>
+                            <div class="website-link">
+                                <a href="https://cryptomazes.com/" target="_blank">cryptomazes.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptAces</div>
+                            <div class="website-link">
+                                <a href="http://cryptaces.com/" target="_blank">cryptaces.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CrypThing</div>
+                            <div class="website-link">
+                                <a href="https://crypthing.com/" target="_blank">crypthing.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CrypThinks</div>
+                            <div class="website-link">
+                                <a href="https://crypthinks.com/" target="_blank">crypthinks.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">CryptoAmazes</div>
+                            <div class="website-link">
+                                <a href="https://cryptoamazes.com/" target="_blank">cryptoamazes.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="additional-outlet">+ 50+ Sites</div>
+                </div>
+                
+                <!-- Empty packages for 3rd and 4th columns in second row -->
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Regional Media Packages -->
+        <section class="category-section" id="regional-media">
+            <h2 class="category-title">Regional Media Packages</h2>
+            
+            <div class="packages-grid">
+                <!-- Package 10 - Indian News Pack -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Indian News Pack</div>
+                        <div class="package-outlets">Mainstream Indian Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Times of India</div>
+                            <div class="website-link">
+                                <a href="https://timesofindia.indiatimes.com/" target="_blank">indiatimes.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">ABP News</div>
+                            <div class="website-link">
+                                <a href="https://www.abplive.com/" target="_blank">abplive.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Economic Times</div>
+                            <div class="website-link">
+                                <a href="https://economictimes.indiatimes.com/" target="_blank">indiatimes.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Outlook India</div>
+                            <div class="website-link">
+                                <a href="https://www.outlookindia.com/" target="_blank">outlookindia.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Deccan Herald</div>
+                            <div class="website-link">
+                                <a href="https://www.deccanherald.com/" target="_blank">deccanherald.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Tribune</div>
+                            <div class="website-link">
+                                <a href="https://www.tribuneindia.com/" target="_blank">tribuneindia.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Free Press Journal</div>
+                            <div class="website-link">
+                                <a href="https://www.freepressjournal.in/" target="_blank">freepressjournal.in</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Print</div>
+                            <div class="website-link">
+                                <a href="https://theprint.in/" target="_blank">theprint.in</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">India Times</div>
+                            <div class="website-link">
+                                <a href="https://www.indiatimes.com/" target="_blank">indiatimes.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Mid-Day</div>
+                            <div class="website-link">
+                                <a href="https://www.mid-day.com/" target="_blank">mid-day.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Wire</div>
+                            <div class="website-link">
+                                <a href="https://thewire.in/" target="_blank">thewire.in</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Week</div>
+                            <div class="website-link">
+                                <a href="https://www.theweek.in/" target="_blank">theweek.in</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">PTI (Press Trust of India)</div>
+                            <div class="website-link">
+                                <a href="https://www.ptinews.com/" target="_blank">ptinews.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 11 - Indian Starter -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Indian Starter</div>
+                        <div class="package-outlets">Essential Indian Media Coverage</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">The Wire</div>
+                            <div class="website-link">
+                                <a href="https://thewire.in/" target="_blank">thewire.in</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">The Week</div>
+                            <div class="website-link">
+                                <a href="https://www.theweek.in/" target="_blank">theweek.in</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">PTI (Press Trust of India)</div>
+                            <div class="website-link">
+                                <a href="https://www.ptinews.com/" target="_blank">ptinews.com</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="additional-outlet">+ 200 Other Media Outlets</div>
+                </div>
+
+                <!-- Package 12 - UK Media Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">UK Media Package</div>
+                        <div class="package-outlets">UK Regional Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">London Journal</div>
+                            <div class="website-link">
+                                <a href="https://londonjournal.co.uk/" target="_blank">londonjournal.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Birmingham Times</div>
+                            <div class="website-link">
+                                <a href="https://birminghamtimes.co.uk/" target="_blank">birminghamtimes.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Manchester Times</div>
+                            <div class="website-link">
+                                <a href="https://manchestertimes.co.uk/" target="_blank">manchestertimes.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">UK Reporter</div>
+                            <div class="website-link">
+                                <a href="https://ukreporter.co.uk/" target="_blank">ukreporter.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">UK Herald</div>
+                            <div class="website-link">
+                                <a href="https://ukherald.co.uk/" target="_blank">ukherald.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Glasgow Report</div>
+                            <div class="website-link">
+                                <a href="https://glasgowreport.co.uk/" target="_blank">glasgowreport.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Bristol Press</div>
+                            <div class="website-link">
+                                <a href="https://bristolpress.co.uk/" target="_blank">bristolpress.co.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">UK Wire</div>
+                            <div class="website-link">
+                                <a href="https://ukwire.uk/" target="_blank">ukwire.uk</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">London Mail</div>
+                            <div class="website-link">
+                                <a href="https://londonmail.co.uk/" target="_blank">londonmail.co.uk</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Package 13 - China Media Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">China Media Package</div>
+                        <div class="package-outlets">Chinese Media Outlets</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Yuesi360</div>
+                            <div class="website-link">
+                                <a href="https://www.yuesi360.com/news/506.html" target="_blank">yuesi360.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Weibo</div>
+                            <div class="website-link">
+                                <a href="https://card.weibo.com/article/m/show/id/2309405179173672190022" target="_blank">weibo.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Toutiao</div>
+                            <div class="website-link">
+                                <a href="https://toutiao.com" target="_blank">toutiao.com</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Second row for remaining regional packages -->
+            <div class="packages-grid" style="margin-top: 20px;">
+                <!-- Package 14 - Spanish Media Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Spanish Media Package</div>
+                        <div class="package-outlets">Spanish Language Media</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Notas de Prensa Gratis</div>
+                            <div class="website-link">
+                                <a href="https://www.notas-d-prensa-gratis.com/" target="_blank">notas-d-prensa-gratis.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Nota de Prensa Gratis</div>
+                            <div class="website-link">
+                                <a href="https://www.notadeprensagratis.com/" target="_blank">notadeprensagratis.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Articleted</div>
+                            <div class="website-link">
+                                <a href="https://www.articleted.com/" target="_blank">articleted.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Wikipec</div>
+                            <div class="website-link">
+                                <a href="https://www.wikipec.com/" target="_blank">wikipec.com</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Cirandas</div>
+                            <div class="website-link">
+                                <a href="https://cirandas.net/" target="_blank">cirandas.net</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Xitio Argentina</div>
+                            <div class="website-link">
+                                <a href="https://www.xitio.com.ar/" target="_blank">xitio.com.ar</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Sintagmas</div>
+                            <div class="website-link">
+                                <a href="http://www.sintagmas.com.ar/" target="_blank">sintagmas.com.ar</a>
+                            </div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Xost</div>
+                            <div class="website-link">
+                                <a href="https://www.xost.com.ar/" target="_blank">xost.com.ar</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Empty packages for 2nd, 3rd and 4th columns -->
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Custom Solutions -->
+        <section class="category-section" id="custom-solutions">
+            <h2 class="category-title">Custom Solutions</h2>
+            
+            <div class="packages-grid">
+                <!-- Package 15 - Custom Package -->
+                <div class="package-card">
+                    <div class="package-header">
+                        <div class="package-title">Custom Package</div>
+                        <div class="package-outlets">Tailored to Your Needs</div>
+                        <div class="column-header">
+                            <span class="media-column">Feature</span>
+                            <span class="website-column">Description</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Mix & Match Any Publications</div>
+                            <div class="website-link">Variable based on selection</div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Regional Targeting</div>
+                            <div class="website-link">Local to global reach</div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Industry-Specific Outlets</div>
+                            <div class="website-link">Niche to mainstream</div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Volume Discounts Available</div>
+                            <div class="website-link">Cost-effective scaling</div>
+                        </div>
+                        <div class="media-website-row">
+                            <div class="media-name">Strategic Media Planning</div>
+                            <div class="website-link">Maximized ROI</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Empty packages for 2nd, 3rd and 4th columns -->
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="package-card" style="visibility: hidden;">
+                    <div class="package-header">
+                        <div class="package-title">Spacer</div>
+                        <div class="package-outlets">Empty Package</div>
+                        <div class="column-header">
+                            <span class="media-column">Publication</span>
+                            <span class="website-column">Website</span>
+                        </div>
+                    </div>
+                    
+                    <div class="media-website-container">
+                        <div class="media-website-row">
+                            <div class="media-name">Spacer</div>
+                            <div class="website-link">N/A</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer - EXACT from index page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Cryptics Media</h4>
+                    <p>A leading crypto marketing agency dedicated to elevating blockchain projects through professional marketing and security services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="/press-release.html">Press Release Distribution</a>
+                    <a href="/audit-kyc.html">Audit & KYC Services</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/press-release.html">Press Release</a>
+                    <a href="/audit-kyc.html">Audit & KYC</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cryptics Media. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu function from index page
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('mainNav');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Handle current page highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (currentPath === linkPath) {
+                    link.style.color = '#0066cc';
+                }
+            });
+        });
+    </script>
+</body>
+</html>

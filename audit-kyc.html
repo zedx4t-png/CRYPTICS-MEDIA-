@@ -1,0 +1,685 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Audit & KYC - Cryptics Media</title>
+    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/3A6qMNJ.png">
+    <link rel="shortcut icon" href="https://i.imgur.com/3A6qMNJ.png">
+    <style>
+        /* ALL STYLING FROM INDEX PAGE */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background: #f5f5f5;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        /* Header - EXACT from index page */
+        header {
+            background: #1a1a1a;
+            color: white;
+            padding: 20px 0;
+            border-bottom: 3px solid #0066cc;
+        }
+
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 24px;
+            font-weight: bold;
+            text-decoration: none;
+            display: flex;
+            gap: 5px;
+        }
+
+        .logo-cryptics {
+            color: #0066cc;
+        }
+
+        .logo-media {
+            color: #ff6600;
+        }
+
+        nav {
+            display: flex;
+            gap: 30px;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: #0066cc;
+        }
+
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 24px;
+            cursor: pointer;
+        }
+
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Hero Section - EXACT from index page */
+        .hero {
+            padding: 80px 0;
+            text-align: center;
+            background: linear-gradient(135deg, #1a1a1a 0%, #2a2a2a 100%);
+            color: white;
+        }
+
+        .hero h1 {
+            font-size: 48px;
+            margin-bottom: 20px;
+            color: white;
+        }
+
+        .hero h1 span {
+            color: #0066cc;
+        }
+
+        .hero p {
+            font-size: 20px;
+            max-width: 800px;
+            margin: 0 auto 40px;
+            color: #ccc;
+        }
+
+        /* Category Sections - From Audit & KYC reference */
+        .category-section {
+            margin: 60px 0 40px;
+            position: relative;
+        }
+
+        .category-title {
+            text-align: center;
+            font-size: 36px;
+            margin-bottom: 40px;
+            color: #1a1a1a;
+        }
+
+        /* Audit Grid - 4 COLUMNS - From Audit & KYC reference */
+        .audit-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        /* Audit Cards - From Audit & KYC reference (NO BUTTONS) */
+        .audit-card {
+            background: rgba(252, 252, 253, 0.95);
+            border: 1px solid rgba(209, 213, 219, 0.8);
+            border-radius: 10px;
+            padding: 20px 15px;
+            box-shadow: 0 3px 12px rgba(0, 0, 0, 0.06);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            backdrop-filter: blur(10px);
+            height: 100%;
+            min-height: 180px;
+        }
+
+        .audit-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(37, 99, 235, 0.8);
+            box-shadow: 0 8px 20px rgba(37, 99, 235, 0.12);
+            background: rgba(252, 252, 253, 0.95);
+        }
+
+        .audit-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #2563eb, #7c3aed);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .audit-card:hover::before {
+            opacity: 1;
+        }
+
+        .audit-icon {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+            color: #2563eb;
+        }
+
+        .audit-name {
+            font-size: 1rem;
+            font-weight: 700;
+            color: #111827;
+            margin-bottom: 10px;
+            line-height: 1.1;
+            text-overflow: ellipsis;
+            overflow: hidden;
+            white-space: nowrap;
+            width: 100%;
+        }
+
+        .audit-badge {
+            display: inline-block;
+            padding: 6px 12px;
+            border-radius: 15px;
+            font-size: 0.7rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .badge-premium {
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            color: #ffffff;
+        }
+
+        .badge-trusted {
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: #ffffff;
+        }
+
+        .badge-affordable {
+            background: linear-gradient(135deg, #8b5cf6, #7c3aed);
+            color: #ffffff;
+        }
+
+        /* Footer - EXACT from index page */
+        footer {
+            background: #1a1a1a;
+            color: white;
+            padding: 60px 0 30px;
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+
+        .footer-section h4 {
+            font-size: 18px;
+            margin-bottom: 20px;
+            color: #0066cc;
+        }
+
+        .footer-section a {
+            color: #ccc;
+            text-decoration: none;
+            display: block;
+            margin-bottom: 10px;
+            transition: color 0.3s;
+        }
+
+        .footer-section a:hover {
+            color: white;
+        }
+
+        .footer-bottom {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #333;
+            color: #999;
+        }
+
+        /* Mobile Styles - Combined from both */
+        @media (max-width: 1200px) {
+            .audit-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+            
+            .footer-content {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+            }
+            
+            .hero h1 {
+                font-size: 2.8rem;
+            }
+        }
+
+        @media (max-width: 1024px) {
+            .audit-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 15px;
+            }
+            
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            .footer-content {
+                gap: 25px;
+                padding: 0 20px;
+            }
+            
+            .footer-section {
+                padding: 15px 0;
+            }
+            
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .header-container {
+                flex-wrap: wrap;
+            }
+
+            nav {
+                display: none;
+                width: 100%;
+                flex-direction: column;
+                gap: 15px;
+                margin-top: 20px;
+            }
+
+            nav.active {
+                display: flex;
+            }
+
+            .mobile-menu-btn {
+                display: block;
+            }
+
+            .hero h1 {
+                font-size: 36px;
+            }
+
+            .hero p {
+                font-size: 18px;
+            }
+
+            .category-title {
+                font-size: 28px;
+            }
+
+            /* Mobile audit layout */
+            .audit-card[style*="visibility: hidden"] {
+                display: none !important;
+            }
+            
+            .audit-grid {
+                grid-template-columns: 1fr !important;
+                gap: 20px;
+            }
+
+            /* Mobile audit styling */
+            .audit-card {
+                padding: 18px 15px !important;
+                margin-bottom: 8px;
+                position: relative;
+                min-height: auto;
+            }
+            
+            .audit-name {
+                font-size: 1.1rem;
+                margin-bottom: 8px;
+            }
+            
+            .audit-badge {
+                font-size: 0.75rem;
+                margin-bottom: 12px;
+            }
+
+            /* Footer for Mobile */
+            footer {
+                padding: 40px 0 20px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 25px;
+                padding: 0 20px;
+            }
+            
+            .footer-section {
+                padding: 20px 0;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .hero h1 {
+                font-size: 28px;
+            }
+            
+            .hero p {
+                font-size: 16px;
+            }
+            
+            .category-title {
+                font-size: 24px;
+            }
+
+            /* Small mobile audit adjustments */
+            .audit-card {
+                padding: 15px 12px !important;
+            }
+            
+            .audit-name {
+                font-size: 1.05rem;
+            }
+            
+            .audit-badge {
+                font-size: 0.7rem;
+            }
+            
+            /* Footer for Small Mobile */
+            .footer-content {
+                padding: 0 15px;
+                gap: 20px;
+            }
+            
+            .footer-section h4 {
+                font-size: 16px;
+            }
+            
+            .footer-section a {
+                font-size: 14px;
+            }
+            
+            .footer-bottom {
+                padding: 20px 15px 0;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header - EXACT from index page -->
+    <header>
+        <div class="header-container">
+            <a href="/" class="logo">
+                <span class="logo-cryptics">CRYPTICS</span>
+                <span class="logo-media">MEDIA</span>
+            </a>
+            
+            <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
+            
+            <nav id="mainNav">
+                <a href="/">Home</a>
+                <a href="/press-release.html">Press Release</a>
+                <a href="/audit-kyc.html" style="color: #0066cc;">Audit & KYC</a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section - EXACT from index page -->
+    <section class="hero">
+        <div class="container">
+            <h1>Audit & <span>KYC Services</span></h1>
+            <p>Build trust and credibility with comprehensive security audits from industry-leading partners. Choose from premium, trusted, or budget-friendly options.</p>
+        </div>
+    </section>
+
+    <!-- Packages Section -->
+    <div class="container">
+        <!-- Top Tier Audits -->
+        <section class="category-section" id="services">
+            <h2 class="category-title">Top Tier Audits</h2>
+            <div class="audit-grid">
+                <div class="audit-card">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Quantstamp</div>
+                    <span class="audit-badge badge-premium">Premium</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🛡</span>
+                    <div class="audit-name">Hacken</div>
+                    <span class="audit-badge badge-premium">Premium</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">⭐️</span>
+                    <div class="audit-name">CertiK</div>
+                    <span class="audit-badge badge-premium">Premium</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🔐</span>
+                    <div class="audit-name">PeckShield</div>
+                    <span class="audit-badge badge-premium">Premium</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">✍️</span>
+                    <div class="audit-name">Quill Audit</div>
+                    <span class="audit-badge badge-premium">Premium</span>
+                </div>
+                
+                <!-- Empty cards for 4-column layout -->
+                <div class="audit-card" style="visibility: hidden;">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Spacer</div>
+                    <span class="audit-badge badge-premium">Premium</span>
+                </div>
+                
+                <div class="audit-card" style="visibility: hidden;">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Spacer</div>
+                    <span class="audit-badge badge-premium">Premium</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular Audits -->
+        <section class="category-section">
+            <h2 class="category-title">Popular Audits</h2>
+            <div class="audit-grid">
+                <div class="audit-card">
+                    <span class="audit-icon">✅</span>
+                    <div class="audit-name">Solid Proof</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🌫</span>
+                    <div class="audit-name">SlowMist</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🔍</span>
+                    <div class="audit-name">Cyberscope</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🌐</span>
+                    <div class="audit-name">InterFi Network</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">💼</span>
+                    <div class="audit-name">Coinsult</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+                
+                <!-- Empty cards for 4-column layout -->
+                <div class="audit-card" style="visibility: hidden;">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Spacer</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+                
+                <div class="audit-card" style="visibility: hidden;">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Spacer</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+                
+                <div class="audit-card" style="visibility: hidden;">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Spacer</div>
+                    <span class="audit-badge badge-trusted">Trusted</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- Budget Friendly -->
+        <section class="category-section">
+            <h2 class="category-title">Budget Friendly</h2>
+            <div class="audit-grid">
+                <div class="audit-card">
+                    <span class="audit-icon">⚡️</span>
+                    <div class="audit-name">TechRate</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🔰</span>
+                    <div class="audit-name">BlockSAFU</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">💀</span>
+                    <div class="audit-name">Skeleton Auditor</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🚫</span>
+                    <div class="audit-name">RugsFree</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">📋</span>
+                    <div class="audit-name">Block Audit</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+
+                <div class="audit-card">
+                    <span class="audit-icon">🔄</span>
+                    <div class="audit-name">Revoluzion</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+                
+                <!-- Empty cards for 4-column layout -->
+                <div class="audit-card" style="visibility: hidden;">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Spacer</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+                
+                <div class="audit-card" style="visibility: hidden;">
+                    <span class="audit-icon">🏆</span>
+                    <div class="audit-name">Spacer</div>
+                    <span class="audit-badge badge-affordable">Affordable</span>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer - EXACT from index page -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Cryptics Media</h4>
+                    <p>A leading crypto marketing agency dedicated to elevating blockchain projects through professional marketing and security services.</p>
+                </div>
+                <div class="footer-section">
+                    <h4>Services</h4>
+                    <a href="/press-release.html">Press Release Distribution</a>
+                    <a href="/audit-kyc.html">Audit & KYC Services</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <a href="/">Home</a>
+                    <a href="/press-release.html">Press Release</a>
+                    <a href="/audit-kyc.html">Audit & KYC</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 Cryptics Media. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu function from index page
+        function toggleMenu() {
+            const nav = document.getElementById('mainNav');
+            nav.classList.toggle('active');
+        }
+
+        // Close mobile menu when clicking a link
+        document.querySelectorAll('nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                const nav = document.getElementById('mainNav');
+                nav.classList.remove('active');
+            });
+        });
+
+        // Handle current page highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPath = window.location.pathname;
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href');
+                if (currentPath === linkPath) {
+                    link.style.color = '#0066cc';
+                }
+            });
+        });
+    </script>
+</body>
+</html>
