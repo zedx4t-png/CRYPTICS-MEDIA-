@@ -310,7 +310,7 @@
     <!-- Header -->
     <header>
         <div class="header-container">
-            <!-- FIXED: Logo now links to index.html -->
+            <!-- FIXED: Logo link without ./ -->
             <a href="index.html" class="logo">
                 <span class="logo-cryptics">CRYPTICS</span>
                 <span class="logo-media">MEDIA</span>
@@ -319,7 +319,7 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             
             <nav id="mainNav">
-                <!-- FIXED: All navigation links with .html extensions -->
+                <!-- FIXED: All navigation links without ./ -->
                 <a href="index.html">Home</a>
                 <a href="press-release.html">Press Release</a>
                 <a href="audit-kyc.html">Audit & KYC</a>
@@ -402,13 +402,13 @@
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <!-- FIXED: Footer links with .html extensions -->
+                    <!-- FIXED: Footer links without ./ -->
                     <a href="press-release.html">Press Release Distribution</a>
                     <a href="audit-kyc.html">Audit & KYC Services</a>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <!-- FIXED: All footer links with .html extensions -->
+                    <!-- FIXED: All footer links without ./ -->
                     <a href="index.html">Home</a>
                     <a href="press-release.html">Press Release</a>
                     <a href="audit-kyc.html">Audit & KYC</a>
@@ -446,6 +446,19 @@
                 const link = this.getAttribute('href');
                 if (link) {
                     window.location.href = link;
+                }
+            });
+        });
+        
+        // Handle current page highlighting
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+            const navLinks = document.querySelectorAll('nav a');
+            
+            navLinks.forEach(link => {
+                const linkPage = link.getAttribute('href');
+                if (currentPage === linkPage) {
+                    link.style.color = '#0066cc';
                 }
             });
         });
