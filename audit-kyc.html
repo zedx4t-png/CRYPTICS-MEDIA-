@@ -441,7 +441,7 @@
     <!-- Header - EXACT from index page -->
     <header>
         <div class="header-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-cryptics">CRYPTICS</span>
                 <span class="logo-media">MEDIA</span>
             </a>
@@ -449,9 +449,9 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             
             <nav id="mainNav">
-                <a href="/">Home</a>
-                <a href="press-release">Press Release</a>
-                <a href="audit-kyc" style="color: #0066cc;">Audit & KYC</a>
+                <a href="index.html">Home</a>
+                <a href="press-release.html">Press Release</a>
+                <a href="audit-kyc.html" style="color: #0066cc;">Audit & KYC</a>
             </nav>
         </div>
     </header>
@@ -636,14 +636,14 @@
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <a href="press-release">Press Release Distribution</a>
-                    <a href="audit-kyc">Audit & KYC Services</a>
+                    <a href="press-release.html">Press Release Distribution</a>
+                    <a href="audit-kyc.html">Audit & KYC Services</a>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <a href="/">Home</a>
-                    <a href="press-release">Press Release</a>
-                    <a href="audit-kyc">Audit & KYC</a>
+                    <a href="index.html">Home</a>
+                    <a href="press-release.html">Press Release</a>
+                    <a href="audit-kyc.html">Audit & KYC</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -674,7 +674,9 @@
             
             navLinks.forEach(link => {
                 const linkPath = link.getAttribute('href');
-                if (currentPath === linkPath) {
+                if (currentPath.includes(linkPath) || 
+                    (linkPath === 'index.html' && currentPath === '/') ||
+                    (linkPath === 'index.html' && currentPath.includes('index.html'))) {
                     link.style.color = '#0066cc';
                 }
             });
