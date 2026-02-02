@@ -441,7 +441,7 @@
     <!-- Header - EXACT from index page -->
     <header>
         <div class="header-container">
-            <a href="index.html" class="logo">
+            <a href="./index.html" class="logo">
                 <span class="logo-cryptics">CRYPTICS</span>
                 <span class="logo-media">MEDIA</span>
             </a>
@@ -449,9 +449,9 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             
             <nav id="mainNav">
-                <a href="index.html">Home</a>
-                <a href="press-release.html">Press Release</a>
-                <a href="audit-kyc.html" style="color: #0066cc;">Audit & KYC</a>
+                <a href="./index.html">Home</a>
+                <a href="./press-release.html">Press Release</a>
+                <a href="./audit-kyc.html" style="color: #0066cc;">Audit & KYC</a>
             </nav>
         </div>
     </header>
@@ -636,14 +636,14 @@
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <a href="press-release.html">Press Release Distribution</a>
-                    <a href="audit-kyc.html">Audit & KYC Services</a>
+                    <a href="./press-release.html">Press Release Distribution</a>
+                    <a href="./audit-kyc.html">Audit & KYC Services</a>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <a href="index.html">Home</a>
-                    <a href="press-release.html">Press Release</a>
-                    <a href="audit-kyc.html">Audit & KYC</a>
+                    <a href="./index.html">Home</a>
+                    <a href="./press-release.html">Press Release</a>
+                    <a href="./audit-kyc.html">Audit & KYC</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -675,11 +675,36 @@
             navLinks.forEach(link => {
                 const linkPath = link.getAttribute('href');
                 if (currentPath.includes(linkPath) || 
-                    (linkPath === 'index.html' && currentPath === '/') ||
-                    (linkPath === 'index.html' && currentPath.includes('index.html'))) {
+                    (linkPath === './index.html' && currentPath === '/') ||
+                    (linkPath === './index.html' && currentPath.includes('index.html'))) {
                     link.style.color = '#0066cc';
                 }
             });
+            
+            // FIX FOR BROKEN LINKS - Force correct paths
+            const currentPage = window.location.pathname.split('/').pop();
+            
+            // Debug info
+            console.log('Current page:', currentPage);
+            console.log('Home link should go to:', './index.html');
+            
+            // Ensure all links work correctly
+            document.querySelectorAll('a').forEach(link => {
+                const href = link.getAttribute('href');
+                if (href && !href.startsWith('http') && !href.startsWith('#')) {
+                    if (!href.startsWith('./') && !href.startsWith('/')) {
+                        link.href = './' + href;
+                    }
+                }
+            });
+        });
+        
+        // Emergency fix for clicking
+        document.addEventListener('click', function(e) {
+            if (e.target.tagName === 'A' && e.target.href.includes('index.html')) {
+                // Allow normal navigation
+                return true;
+            }
         });
     </script>
 </body>
