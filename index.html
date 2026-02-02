@@ -305,13 +305,16 @@
             }
         }
     </style>
+    
+    <!-- Base tag for GitHub Pages -->
+    <base href="/CRYPTICS-MEDIA-/">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
-            <!-- FIXED: Using repository name in path -->
-            <a href="/CRYPTICS-MEDIA-/index.html" class="logo">
+            <!-- Simple relative links - JavaScript will fix them -->
+            <a href="index.html" class="logo">
                 <span class="logo-cryptics">CRYPTICS</span>
                 <span class="logo-media">MEDIA</span>
             </a>
@@ -319,10 +322,9 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             
             <nav id="mainNav">
-                <!-- FIXED: Using repository name in path -->
-                <a href="/CRYPTICS-MEDIA-/index.html">Home</a>
-                <a href="/CRYPTICS-MEDIA-/press-release.html">Press Release</a>
-                <a href="/CRYPTICS-MEDIA-/audit-kyc.html">Audit & KYC</a>
+                <a href="index.html">Home</a>
+                <a href="press-release.html">Press Release</a>
+                <a href="audit-kyc.html">Audit & KYC</a>
             </nav>
         </div>
     </header>
@@ -341,7 +343,7 @@
             <h2 class="section-title">Our Services</h2>
             <div class="services-grid">
                 <!-- Press Release Service -->
-                <a href="/CRYPTICS-MEDIA-/press-release.html" class="service-card">
+                <a href="press-release.html" class="service-card">
                     <div class="service-icon">📰</div>
                     <h3 class="service-title">Press Release Distribution</h3>
                     <p class="service-description">Amplify your crypto project's message across leading crypto and mainstream media outlets. Reach millions of potential investors with our premium press release packages.</p>
@@ -351,7 +353,7 @@
                 </a>
 
                 <!-- Audit & KYC Service -->
-                <a href="/CRYPTICS-MEDIA-/audit-kyc.html" class="service-card">
+                <a href="audit-kyc.html" class="service-card">
                     <div class="service-icon">🛡️</div>
                     <h3 class="service-title">Audit & KYC Services</h3>
                     <p class="service-description">Build trust and security for your crypto project with comprehensive smart contract audits and KYC verification. Get certified by leading security firms in the blockchain space.</p>
@@ -402,16 +404,14 @@
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <!-- FIXED: Using repository name in path -->
-                    <a href="/CRYPTICS-MEDIA-/press-release.html">Press Release Distribution</a>
-                    <a href="/CRYPTICS-MEDIA-/audit-kyc.html">Audit & KYC Services</a>
+                    <a href="press-release.html">Press Release Distribution</a>
+                    <a href="audit-kyc.html">Audit & KYC Services</a>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <!-- FIXED: Using repository name in path -->
-                    <a href="/CRYPTICS-MEDIA-/index.html">Home</a>
-                    <a href="/CRYPTICS-MEDIA-/press-release.html">Press Release</a>
-                    <a href="/CRYPTICS-MEDIA-/audit-kyc.html">Audit & KYC</a>
+                    <a href="index.html">Home</a>
+                    <a href="press-release.html">Press Release</a>
+                    <a href="audit-kyc.html">Audit & KYC</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -421,6 +421,46 @@
     </footer>
 
     <script>
+        // Function to get the correct base path
+        function getBasePath() {
+            // Get the current path
+            const currentPath = window.location.pathname;
+            
+            // If we're at the root, return empty string
+            if (currentPath === '/' || currentPath === '/CRYPTICS-MEDIA-/') {
+                return '';
+            }
+            
+            // Check if we're in the CRYPTICS-MEDIA- folder
+            if (currentPath.includes('/CRYPTICS-MEDIA-/')) {
+                return '/CRYPTICS-MEDIA-/';
+            }
+            
+            // Default to empty for root GitHub Pages
+            return '';
+        }
+        
+        // Fix all links on the page
+        function fixAllLinks() {
+            const basePath = getBasePath();
+            
+            document.querySelectorAll('a').forEach(link => {
+                const href = link.getAttribute('href');
+                
+                // Only fix internal links
+                if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
+                    // Remove any leading ./
+                    let cleanHref = href.replace(/^\.\//, '');
+                    
+                    // Add base path if not already there
+                    if (!cleanHref.startsWith('/')) {
+                        link.href = basePath + cleanHref;
+                    }
+                }
+            });
+        }
+        
+        // Mobile menu function
         function toggleMenu() {
             const nav = document.getElementById('mainNav');
             nav.classList.toggle('active');
@@ -452,16 +492,29 @@
         
         // Handle current page highlighting
         document.addEventListener('DOMContentLoaded', function() {
+            fixAllLinks(); // Fix all links first
+            
             const currentPath = window.location.pathname;
+            const currentPage = currentPath.split('/').pop() || 'index.html';
             const navLinks = document.querySelectorAll('nav a');
             
             navLinks.forEach(link => {
                 const linkHref = link.getAttribute('href');
-                if (currentPath === linkHref) {
+                const linkPage = linkHref.split('/').pop();
+                
+                if (currentPage === linkPage) {
                     link.style.color = '#0066cc';
                 }
             });
+            
+            // Debug info - remove this in production
+            console.log('Current path:', currentPath);
+            console.log('Current page:', currentPage);
+            console.log('Base path:', getBasePath());
         });
+        
+        // Also fix links when page is fully loaded
+        window.addEventListener('load', fixAllLinks);
     </script>
 </body>
 </html>
