@@ -4,8 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Press Release - Cryptics Media</title>
-    <link rel="icon" type="image/x-icon" href="https://i.imgur.com/3A6qMNJ.png">
-    <link rel="shortcut icon" href="https://i.imgur.com/3A6qMNJ.png">
     <style>
         /* ALL STYLING FROM INDEX PAGE */
         * {
@@ -624,7 +622,7 @@
     <!-- Header - EXACT from index page -->
     <header>
         <div class="header-container">
-            <a href="/" class="logo">
+            <a href="index.html" class="logo">
                 <span class="logo-cryptics">CRYPTICS</span>
                 <span class="logo-media">MEDIA</span>
             </a>
@@ -632,9 +630,9 @@
             <button class="mobile-menu-btn" onclick="toggleMenu()">☰</button>
             
             <nav id="mainNav">
-                <a href="/">Home</a>
-                <a href="/press-release.html" style="color: #0066cc;">Press Release</a>
-                <a href="/audit-kyc.html">Audit & KYC</a>
+                <a href="index.html">Home</a>
+                <a href="press-release.html" style="color: #0066cc;">Press Release</a>
+                <a href="audit-kyc.html">Audit & KYC</a>
             </nav>
         </div>
     </header>
@@ -1766,14 +1764,14 @@
                 </div>
                 <div class="footer-section">
                     <h4>Services</h4>
-                    <a href="/press-release.html">Press Release Distribution</a>
-                    <a href="/audit-kyc.html">Audit & KYC Services</a>
+                    <a href="press-release.html">Press Release Distribution</a>
+                    <a href="audit-kyc.html">Audit & KYC Services</a>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
-                    <a href="/">Home</a>
-                    <a href="/press-release.html">Press Release</a>
-                    <a href="/audit-kyc.html">Audit & KYC</a>
+                    <a href="index.html">Home</a>
+                    <a href="press-release.html">Press Release</a>
+                    <a href="audit-kyc.html">Audit & KYC</a>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -1804,7 +1802,7 @@
             
             navLinks.forEach(link => {
                 const linkPath = link.getAttribute('href');
-                if (currentPath === linkPath) {
+                if (currentPath.includes(linkPath)) {
                     link.style.color = '#0066cc';
                 }
             });
