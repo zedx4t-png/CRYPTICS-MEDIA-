@@ -305,15 +305,12 @@
             }
         }
     </style>
-    
-    <!-- Base tag for GitHub Pages -->
-    <base href="/CRYPTICS-MEDIA-/">
 </head>
 <body>
     <!-- Header -->
     <header>
         <div class="header-container">
-            <!-- Simple relative links - JavaScript will fix them -->
+            <!-- Simple relative links -->
             <a href="index.html" class="logo">
                 <span class="logo-cryptics">CRYPTICS</span>
                 <span class="logo-media">MEDIA</span>
@@ -421,45 +418,6 @@
     </footer>
 
     <script>
-        // Function to get the correct base path
-        function getBasePath() {
-            // Get the current path
-            const currentPath = window.location.pathname;
-            
-            // If we're at the root, return empty string
-            if (currentPath === '/' || currentPath === '/CRYPTICS-MEDIA-/') {
-                return '';
-            }
-            
-            // Check if we're in the CRYPTICS-MEDIA- folder
-            if (currentPath.includes('/CRYPTICS-MEDIA-/')) {
-                return '/CRYPTICS-MEDIA-/';
-            }
-            
-            // Default to empty for root GitHub Pages
-            return '';
-        }
-        
-        // Fix all links on the page
-        function fixAllLinks() {
-            const basePath = getBasePath();
-            
-            document.querySelectorAll('a').forEach(link => {
-                const href = link.getAttribute('href');
-                
-                // Only fix internal links
-                if (href && !href.startsWith('http') && !href.startsWith('#') && !href.startsWith('mailto:')) {
-                    // Remove any leading ./
-                    let cleanHref = href.replace(/^\.\//, '');
-                    
-                    // Add base path if not already there
-                    if (!cleanHref.startsWith('/')) {
-                        link.href = basePath + cleanHref;
-                    }
-                }
-            });
-        }
-        
         // Mobile menu function
         function toggleMenu() {
             const nav = document.getElementById('mainNav');
@@ -492,29 +450,16 @@
         
         // Handle current page highlighting
         document.addEventListener('DOMContentLoaded', function() {
-            fixAllLinks(); // Fix all links first
-            
             const currentPath = window.location.pathname;
-            const currentPage = currentPath.split('/').pop() || 'index.html';
             const navLinks = document.querySelectorAll('nav a');
             
             navLinks.forEach(link => {
-                const linkHref = link.getAttribute('href');
-                const linkPage = linkHref.split('/').pop();
-                
-                if (currentPage === linkPage) {
+                const linkPath = link.getAttribute('href');
+                if (currentPath.includes(linkPath)) {
                     link.style.color = '#0066cc';
                 }
             });
-            
-            // Debug info - remove this in production
-            console.log('Current path:', currentPath);
-            console.log('Current page:', currentPage);
-            console.log('Base path:', getBasePath());
         });
-        
-        // Also fix links when page is fully loaded
-        window.addEventListener('load', fixAllLinks);
     </script>
 </body>
 </html>
